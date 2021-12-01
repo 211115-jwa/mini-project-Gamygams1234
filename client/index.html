@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gamy's project</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700&amp;family=Fraunces:wght@400;500;600;700;900&amp;display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+
+<body>
+    <header class="padding-container mb-5">
+        <div class="width-container">
+            <h1 class="fraunces">RSVP</h1>
+            <p class="fraunces">A Gamaliel Burgos App</p>
+        </div>
+    </header>
+
+    <section class="grid-body padding-container">
+        <div class="width-container">
+            <div class="form">
+                <form method = "POST" action="http://localhost:8080/users">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Person's name" required>
+
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Person's email" >
+
+                    <input class="fw-900 fraunces" type="submit" value="Submit">
+                </form>
+            </div>
+            <!-- Eventually I do want the guests to show up on the page -->
+            <!-- <div class="guests">
+                <h1 class = "fraunces guest-title">Your Guests</h1>
+                <div class="cards" id = "demo">
+                    <div class="card">
+                        <h2 class = "fraunces">Gamaliel Burgos</h2>
+                        <p>gamy1990@gmail.com</p>
+                    </div>
+                </div>
+            </div> -->
+
+        </div>
+
+    </section>
+
+    <script>
+    function validate(e) {
+    	
+        e.preventDefault(); // prevent the form sending
+        
+      
+        var Reg = /^[A-Za-z0-9_]{1,20}$/;
+        var Reg1 = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        var username = document.getElementById('name');
+        var email = document.getElementById('email');
+  
+        if (Reg.test(username.value) == false) {
+          alert('Invalid Name.');
+          username.focus();
+          return false;
+        }
+  
+        if (Reg1.test(email.value) == false) {
+          alert('Invalid Email.');
+          email.focus();
+          return false;
+        }
+      }
+      document.getElementById('form_id').addEventListener('submit',validate);   
+    </script>
+</body>
+
+</html>
