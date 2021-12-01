@@ -34,15 +34,15 @@ public class Main {
 			ctx.html(html);
 		});
 		
-		app.get("/list", ctx ->{
-			String html = "";
-			for(Guest eachGuest: guests){
-				if (eachGuest != null) {
-					html += "<div>\r\n"+ "<h2>"+ eachGuest.name+"</h2>\r\n"+"<p>"+ eachGuest.email+"</p>\r\n"+ "</div>";
-				}
-			
-		  }
-			ctx.html(html);
-		});
+//		app.get("/list", ctx ->{
+//			String html = "";
+//			for(Guest eachGuest: guests){
+//				if (eachGuest != null) {
+//					html += "<div>\r\n"+ "<h2>"+ eachGuest.name+"</h2>\r\n"+"<p>"+ eachGuest.email+"</p>\r\n"+ "</div>";
+//				}
+//			
+//		  }
+//			ctx.html(html);
+//		});
 	}
 }
