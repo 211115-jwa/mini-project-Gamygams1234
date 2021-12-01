@@ -15,9 +15,7 @@ public class Main {
 		Javalin app = Javalin.create();
 		app.start();
 	
-//		for(Guest str: guests){
-//			System.out.println(str.name);
-//		  }
+
 		app.post("/users", ctx -> { // the {} syntax does not allow slashes ('/') as part of the parameter
 			String name = ctx.formParam("name");
 			String email = ctx.formParam("email");
