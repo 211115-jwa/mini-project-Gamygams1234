@@ -1,16 +1,13 @@
 package com.revature.rsvpapp;
 import io.javalin.Javalin;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
-	static Guest[] guests;
-	static int currentIndex;
-
-   
 
 	public static void main(String[] args) {
-		currentIndex=0;
-		guests = new Guest[10];
+
+		List<Guest> guests  = new ArrayList<>();
 
 		Javalin app = Javalin.create();
 		app.start();
@@ -20,8 +17,8 @@ public class Main {
 			String name = ctx.formParam("name");
 			String email = ctx.formParam("email");
 			Guest guest = new Guest(name, email);
-			guests[currentIndex] = guest;
-			currentIndex++;
+			guests.add(guest);
+	
 			String html = "";
 			for(Guest eachGuest: guests){
 				if (eachGuest != null) {
